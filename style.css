@@ -1,0 +1,268 @@
+/* =========================================================
+   Germ Eviction — Digital Business Card
+   Light / white theme · Mobile-first · max-width 430px
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --teal:  #2ABFBF;
+  --teal-dark: #1fa8a8;
+  --navy:  #1A202C;
+  --red:   #E53E3E;
+  --white: #ffffff;
+  --light-bg: #f7f9fb;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+}
+
+html, body {
+  height: 100%;
+  background: var(--light-bg);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Page wrapper ────────────────────────────────────────── */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 0 40px;
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  width: 100%;
+  max-width: 430px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Desktop: floating card look */
+@media (min-width: 480px) {
+  .page-wrapper {
+    align-items: center;
+    padding: 40px 16px;
+  }
+  .card {
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 36px 24px 20px;
+  animation: fadeInDown 0.5s ease 0.1s both;
+}
+
+.logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── Brand block ──────────────────────────────────────────── */
+.brand-block {
+  text-align: center;
+  padding: 0 24px 20px;
+  animation: fadeInDown 0.5s ease 0.15s both;
+}
+
+.company-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+}
+
+/* ── Contact banner ───────────────────────────────────────── */
+.contact-banner {
+  width: 100%;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 18px 24px;
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.contact-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── Service text ─────────────────────────────────────────── */
+.service-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 16px 28px 4px;
+  line-height: 1.5;
+  animation: fadeIn 0.5s ease 0.25s both;
+}
+
+/* ── Share button ─────────────────────────────────────────── */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 8px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 14px 0 8px;
+  transition: background 0.2s, color 0.2s;
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.share-btn:hover,
+.share-btn:active {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* ── Contact list ─────────────────────────────────────────── */
+.contact-list {
+  width: 100%;
+  padding: 12px 20px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeInUp 0.5s ease 0.35s both;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.contact-row:hover,
+.contact-row:active {
+  background: #f0fcfc;
+}
+
+/* Circular teal icon */
+.icon-circle {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.row-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* ── Save Contact button ──────────────────────────────────── */
+.save-btn {
+  width: calc(100% - 40px);
+  margin: 20px 20px 28px;
+  padding: 17px;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  animation: fadeInUp 0.5s ease 0.45s both;
+}
+
+.save-btn:hover {
+  background: var(--teal-dark);
+}
+
+.save-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
