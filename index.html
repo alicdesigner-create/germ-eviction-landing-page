@@ -56,30 +56,87 @@
       .card { border-radius: 18px; box-shadow: 0 10px 50px rgba(0,0,0,0.14); overflow: hidden; }
     }
 
-    /* ══ 1. TOP SECTION ══════════════════════════════════════ */
-    .top {
-      background: var(--white);
+    /* ══ 1. SLIDER ═══════════════════════════════════════════ */
+    .slider-wrap {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      height: 280px;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 36px 24px 20px;
-      gap: 10px;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .logo {
-      height: 110px;
+    /* Slide 1 — white bg */
+    .slide-1 { background: var(--white); }
+
+    /* Slides 2–4 — photo bg */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    /* Shared slide content */
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 20px 0;
+      width: 100%;
+    }
+
+    .slide-logo-sm {
+      height: 60px;
       width: auto;
       object-fit: contain;
     }
 
-    .company-name {
+    /* Slide 1 specific */
+    .slide-logo-lg {
+      height: 110px;
+      width: auto;
+      object-fit: contain;
+      animation: logoFadeIn 0.8s ease both;
+    }
+
+    @keyframes logoFadeIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .slide-company {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 32px;
+      font-size: 26px;
       color: var(--navy);
       letter-spacing: 0.06em;
       text-align: center;
-      line-height: 1.1;
     }
 
     .slogan {
@@ -90,6 +147,51 @@
       letter-spacing: 0.08em;
       text-transform: none;
       text-align: center;
+    }
+
+    /* Slides 2–4 caption */
+    .slide-caption {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .slide-accent {
+      width: 48px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    /* Dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: var(--teal);
+      border-color: var(--teal);
     }
 
     /* ══ 2. CONTACT BANNER ═══════════════════════════════════ */
@@ -267,10 +369,61 @@
   <div class="page">
     <div class="card">
 
-      <!-- 1. TOP -->
-      <div class="top">
-        <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="logo" />
-<p class="slogan"><span style="color:#E53E3E;">One Visit.</span> Total disinfection.</p>
+      <!-- 1. SLIDER -->
+      <div class="slider-wrap">
+        <div class="slider-track" id="sliderTrack">
+
+          <!-- Slide 1: Brand -->
+          <div class="slide slide-1">
+            <div class="slide-content">
+              <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-lg" />
+              <div class="slide-company">GERM EVICTION</div>
+              <p class="slogan"><span style="color:#E53E3E;">One Visit.</span> Total disinfection.</p>
+            </div>
+          </div>
+
+          <!-- Slide 2: Deep Clean -->
+          <div class="slide">
+            <div class="slide-bg" style="background-image:url('images/Deep_Clean.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-sm" />
+              <div class="slide-caption">Deep Clean</div>
+              <div class="slide-accent"></div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Staff Training -->
+          <div class="slide">
+            <div class="slide-bg" style="background-image:url('images/Staff_Training.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-sm" />
+              <div class="slide-caption">Staff Training</div>
+              <div class="slide-accent"></div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Scheduled Resets -->
+          <div class="slide">
+            <div class="slide-bg" style="background-image:url('images/Schedule_resets.jpg')"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-sm" />
+              <div class="slide-caption">Scheduled Resets</div>
+              <div class="slide-accent"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="sliderDots">
+          <button class="dot active" onclick="goToSlide(0)"></button>
+          <button class="dot" onclick="goToSlide(1)"></button>
+          <button class="dot" onclick="goToSlide(2)"></button>
+          <button class="dot" onclick="goToSlide(3)"></button>
+        </div>
       </div>
 
       <!-- 2. CONTACT BANNER -->
@@ -358,5 +511,47 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    // ── Slider ──────────────────────────────────────────────
+    (function () {
+      var track  = document.getElementById('sliderTrack');
+      var dots   = document.querySelectorAll('#sliderDots .dot');
+      var total  = 4;
+      var current = 0;
+      var timer;
+
+      function goToSlide(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+        resetTimer();
+      }
+
+      function nextSlide() { goToSlide(current + 1); }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(nextSlide, 4000);
+      }
+
+      // Expose for dot onclick
+      window.goToSlide = goToSlide;
+
+      // Touch / swipe
+      var startX = 0;
+      var wrap = track.parentElement;
+      wrap.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+      wrap.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) goToSlide(diff > 0 ? current + 1 : current - 1);
+      }, { passive: true });
+
+      resetTimer();
+    })();
+  </script>
 </body>
 </html>
