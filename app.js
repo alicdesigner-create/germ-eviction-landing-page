@@ -3,8 +3,8 @@ function downloadVCF() {
   const vcard = [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'N:;Debbie;;;',
-    'FN:Debbie',
+    'N:Garay;Debbie;;;',
+    'FN:Debbie Garay',
     'ORG:Germ Eviction',
     'TITLE:Disinfection Specialist',
     'TEL;TYPE=WORK,VOICE:+13036659757',
