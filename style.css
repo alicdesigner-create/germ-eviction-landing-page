@@ -1,196 +1,177 @@
-/* =========================================================
-   Germ Eviction — Digital Business Card
-   Light / white theme · Mobile-first · max-width 430px
-   ========================================================= */
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ── Variables ── */
 :root {
-  --teal:  #2ABFBF;
+  --teal:      #2ABFBF;
   --teal-dark: #1fa8a8;
-  --navy:  #1A202C;
-  --red:   #E53E3E;
-  --white: #ffffff;
-  --light-bg: #f7f9fb;
-  --text-main: #2d3748;
-  --text-muted: #718096;
+  --navy:      #1A202C;
+  --red:       #E53E3E;
+  --white:     #ffffff;
+  --bg:        #eef1f5;
+  --gray-line: #e2e8f0;
+  --text:      #1A202C;
+  --muted:     #718096;
 }
 
 html, body {
-  height: 100%;
-  background: var(--light-bg);
+  min-height: 100%;
+  background: var(--bg);
   font-family: 'Open Sans', sans-serif;
-  color: var(--text-main);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Page wrapper ────────────────────────────────────────── */
-.page-wrapper {
+/* ── Page wrapper ── */
+.page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 0 40px;
-  animation: fadeIn 0.5s ease both;
+  padding: 0 0 48px;
 }
 
-/* ── Card ─────────────────────────────────────────────────── */
+/* ── Card ── */
 .card {
   width: 100%;
   max-width: 430px;
   background: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+  align-items: stretch;
 }
 
-/* Desktop: floating card look */
 @media (min-width: 480px) {
-  .page-wrapper {
-    align-items: center;
-    padding: 40px 16px;
-  }
-  .card {
-    border-radius: 20px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-  }
+  .page { align-items: center; padding: 40px 16px 60px; }
+  .card { border-radius: 18px; box-shadow: 0 10px 50px rgba(0,0,0,0.14); overflow: hidden; }
 }
 
-/* ── Logo ─────────────────────────────────────────────────── */
-.logo-wrap {
-  width: 100%;
+/* ══ 1. TOP SECTION ══════════════════════════════════════════ */
+.top {
+  background: var(--white);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 36px 24px 20px;
-  animation: fadeInDown 0.5s ease 0.1s both;
+  gap: 10px;
 }
 
 .logo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
+  height: 110px;
+  width: auto;
   object-fit: contain;
-}
-
-/* ── Brand block ──────────────────────────────────────────── */
-.brand-block {
-  text-align: center;
-  padding: 0 24px 20px;
-  animation: fadeInDown 0.5s ease 0.15s both;
 }
 
 .company-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 1.6rem;
-  letter-spacing: 0.08em;
+  font-size: 32px;
   color: var(--navy);
+  letter-spacing: 0.06em;
+  text-align: center;
   line-height: 1.1;
 }
 
 .slogan {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 11px;
   color: var(--teal);
-  letter-spacing: 0.04em;
-  margin-top: 6px;
-}
-
-/* ── Contact banner ───────────────────────────────────────── */
-.contact-banner {
-  width: 100%;
-  background: var(--navy);
-  color: var(--white);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   text-align: center;
-  padding: 18px 24px;
-  animation: fadeIn 0.5s ease 0.2s both;
 }
 
-.contact-name {
+/* ══ 2. CONTACT BANNER ════════════════════════════════════════ */
+.banner {
+  background: var(--navy);
+  border-left: 5px solid var(--teal);
+  padding: 18px 24px;
+}
+
+.banner-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
+  font-size: 24px;
+  color: var(--white);
+  line-height: 1.2;
 }
 
-.contact-title {
-  font-size: 0.8rem;
-  font-weight: 500;
+.banner-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--teal);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   margin-top: 4px;
 }
 
-/* ── Service text ─────────────────────────────────────────── */
-.service-text {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  text-align: center;
-  padding: 16px 28px 4px;
-  line-height: 1.5;
-  animation: fadeIn 0.5s ease 0.25s both;
+/* ══ 3. MIDDLE ════════════════════════════════════════════════ */
+.middle {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px 16px;
+  gap: 14px;
+  border-bottom: 1px solid var(--gray-line);
 }
 
-/* ── Share button ─────────────────────────────────────────── */
+.service-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.5;
+}
+
 .share-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   background: transparent;
   border: 2px solid var(--teal);
   color: var(--teal);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  padding: 8px 22px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 9px 26px;
   border-radius: 999px;
   cursor: pointer;
-  margin: 14px 0 8px;
   transition: background 0.2s, color 0.2s;
-  animation: fadeIn 0.5s ease 0.3s both;
 }
 
-.share-btn:hover,
-.share-btn:active {
+.share-btn:hover, .share-btn:active {
   background: var(--teal);
   color: var(--white);
 }
 
-/* ── Contact list ─────────────────────────────────────────── */
+/* ══ 4. CONTACT ROWS ══════════════════════════════════════════ */
 .contact-list {
-  width: 100%;
-  padding: 12px 20px 4px;
+  background: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  animation: fadeInUp 0.5s ease 0.35s both;
 }
 
 .contact-row {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 10px 12px;
-  border-radius: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--gray-line);
   text-decoration: none;
   color: inherit;
   transition: background 0.15s;
 }
 
-.contact-row:hover,
-.contact-row:active {
-  background: #f0fcfc;
+.contact-row:last-child { border-bottom: none; }
+
+.contact-row:hover, .contact-row:active {
+  background: #f0fafa;
 }
 
-/* Circular teal icon */
 .icon-circle {
   flex-shrink: 0;
   width: 50px;
@@ -203,66 +184,70 @@ html, body {
   color: var(--white);
 }
 
-.row-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+.row-info { display: flex; flex-direction: column; gap: 3px; }
 
 .row-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
+  letter-spacing: 0.14em;
+  color: var(--teal);
   text-transform: uppercase;
 }
 
 .row-value {
-  font-size: 0.88rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--navy);
   line-height: 1.4;
 }
 
-/* ── Save Contact button ──────────────────────────────────── */
+/* ══ 5. SAVE CONTACT ══════════════════════════════════════════ */
+.save-wrap {
+  padding: 20px 20px 10px;
+  background: var(--white);
+}
+
 .save-btn {
-  width: calc(100% - 40px);
-  margin: 20px 20px 28px;
-  padding: 17px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   background: var(--teal);
   color: var(--white);
   border: none;
   border-radius: 12px;
+  padding: 18px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 15px;
   letter-spacing: 0.12em;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
-  animation: fadeInUp 0.5s ease 0.45s both;
 }
 
-.save-btn:hover {
-  background: var(--teal-dark);
+.save-btn:hover  { background: var(--teal-dark); }
+.save-btn:active { transform: scale(0.98); }
+
+.save-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.save-btn:active {
-  transform: scale(0.98);
-}
-
-/* ── Animations ───────────────────────────────────────────── */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* ══ 6. FOOTER ════════════════════════════════════════════════ */
+.footer {
+  background: var(--white);
+  text-align: center;
+  padding: 12px 20px 28px;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Open Sans', sans-serif;
 }

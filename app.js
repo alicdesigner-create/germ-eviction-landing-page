@@ -25,13 +25,12 @@ function downloadVCF() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 
-  // Feedback
   const btn = document.getElementById('saveBtn');
-  const original = btn.textContent;
+  const original = btn.innerHTML;
   btn.textContent = 'Saved!';
   btn.style.background = '#1fa8a8';
   setTimeout(() => {
-    btn.textContent = original;
+    btn.innerHTML = original;
     btn.style.background = '';
   }, 2000);
 }
@@ -45,18 +44,15 @@ function shareCard() {
   };
 
   const btn = document.getElementById('shareBtn');
+  const original = btn.innerHTML;
 
   if (navigator.share) {
     navigator.share(shareData).catch(() => {});
   } else {
-    // Fallback: copy to clipboard
-    const text = `${shareData.text}\n🌐 ${shareData.url}`;
+    const text = shareData.text + '\n🌐 ' + shareData.url;
     navigator.clipboard.writeText(text).then(() => {
-      const original = btn.innerHTML;
-      btn.innerHTML = 'Copied!';
+      btn.textContent = 'Copied!';
       setTimeout(() => { btn.innerHTML = original; }, 2000);
-    }).catch(() => {
-      // Silent fail — clipboard API blocked
-    });
+    }).catch(() => {});
   }
 }
