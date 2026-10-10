@@ -7,9 +7,9 @@ function downloadVCF() {
     'FN:Debbie Garay',
     'ORG:Germ Eviction',
     'TITLE:Disinfection Specialist',
-    'TEL;TYPE=WORK,VOICE:+13036659757',
-    'TEL;TYPE=CELL:+13036659757',
-    'EMAIL;TYPE=WORK:debbie@germeviction.com',
+    'TEL;TYPE=WORK,VOICE:+17209102468',
+    'TEL;TYPE=CELL:+17209102468',
+    'EMAIL;TYPE=WORK:info@germeviction.com',
     'ADR;TYPE=WORK:;;11005 Dover St Unit 200;Westminster;CO;80021;USA',
     'URL:https://germeviction.com',
     'END:VCARD'
@@ -28,7 +28,7 @@ function downloadVCF() {
   const btn = document.getElementById('saveBtn');
   const original = btn.innerHTML;
   btn.textContent = 'Saved!';
-  btn.style.background = '#1fa8a8';
+  btn.style.background = '#9DBD1F';
   setTimeout(() => {
     btn.innerHTML = original;
     btn.style.background = '';
@@ -39,7 +39,7 @@ function downloadVCF() {
 function shareCard() {
   const shareData = {
     title: 'Germ Eviction — Debbie',
-    text:  'Debbie | Disinfection Specialist\nGerm Eviction\n📞 (303) 665-9757\n✉️ debbie@germeviction.com',
+    text:  'Debbie | Disinfection Specialist\nGerm Eviction\n📞 (720) 910-2468\n✉️ info@germeviction.com',
     url:   window.location.href
   };
 

@@ -13,13 +13,13 @@
 
     /* ── Variables ── */
     :root {
-      --teal:      #2ABFBF;
-      --teal-dark: #1fa8a8;
-      --navy:      #1A202C;
-      --red:       #E53E3E;
+      --teal:      #B6D92B;
+      --teal-dark: #9DBD1F;
+      --navy:      #111111;
+      --red:       #B6D92B;
       --white:     #ffffff;
-      --bg:        #eef1f5;
-      --gray-line: #e2e8f0;
+      --bg:        #f1f2ed;
+      --gray-line: #e3e5dc;
       --text:      #1A202C;
       --muted:     #718096;
     }
@@ -282,7 +282,7 @@
       gap: 8px;
       background: transparent;
       border: 2px solid var(--teal);
-      color: var(--teal);
+      color: #708817;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 12px;
@@ -295,7 +295,7 @@
 
     .share-btn:hover, .share-btn:active {
       background: var(--teal);
-      color: var(--white);
+      color: var(--navy);
     }
 
     /* ══ 4. CONTACT ROWS ══════════════════════════════════════ */
@@ -331,7 +331,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white);
+      color: var(--navy);
     }
 
     .row-info { display: flex; flex-direction: column; gap: 3px; }
@@ -341,7 +341,7 @@
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.14em;
-      color: var(--teal);
+      color: #708817;
       text-transform: uppercase;
     }
 
@@ -366,7 +366,7 @@
       justify-content: center;
       gap: 12px;
       background: var(--teal);
-      color: var(--white);
+      color: var(--navy);
       border: none;
       border-radius: 12px;
       padding: 18px;
@@ -415,7 +415,7 @@
           <div class="slide slide-1">
             <div class="slide-content">
               <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-lg" />
-              <p class="slogan"><span style="color:#E53E3E;">One Visit.</span> Total disinfection.</p>
+              <p class="slogan"><span style="color:#B6D92B;">One Visit.</span> Total disinfection.</p>
             </div>
           </div>
 
@@ -430,18 +430,7 @@
             </div>
           </div>
 
-          <!-- Slide 3: Staff Training -->
-          <div class="slide">
-            <div class="slide-bg" style="background-image:url('images/Staff%20Training.jpg')"></div>
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-              <img src="images/Germevictionlogo.png" alt="Germ Eviction" class="slide-logo-sm slide-logo-white" />
-              <div class="slide-caption">Staff Training</div>
-              <div class="slide-accent"></div>
-            </div>
-          </div>
-
-          <!-- Slide 4: Scheduled Resets -->
+          <!-- Slide 3: Scheduled Resets -->
           <div class="slide">
             <div class="slide-bg" style="background-image:url('images/Schedule%20resets.jpg')"></div>
             <div class="slide-overlay" style="background:rgba(0,0,0,0.65);"></div>
@@ -459,7 +448,6 @@
           <button class="dot active" onclick="goToSlide(0)"></button>
           <button class="dot" onclick="goToSlide(1)"></button>
           <button class="dot" onclick="goToSlide(2)"></button>
-          <button class="dot" onclick="goToSlide(3)"></button>
         </div>
       </div>
 
@@ -484,7 +472,7 @@
       <!-- 4. CONTACT ROWS -->
       <div class="contact-list">
 
-        <a href="tel:+13036659757" class="contact-row">
+        <a href="tel:+17209102468" class="contact-row">
           <div class="icon-circle">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.73 2.02z"/>
@@ -492,11 +480,11 @@
           </div>
           <div class="row-info">
             <span class="row-label">Call Us</span>
-            <span class="row-value">(303) 665-9757</span>
+            <span class="row-value">(720) 910-2468</span>
           </div>
         </a>
 
-<a href="mailto:debbie@germeviction.com" class="contact-row">
+<a href="mailto:info@germeviction.com" class="contact-row">
           <div class="icon-circle">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -505,11 +493,11 @@
           </div>
           <div class="row-info">
             <span class="row-label">Email</span>
-            <span class="row-value">debbie@germeviction.com</span>
+            <span class="row-value">info@germeviction.com</span>
           </div>
         </a>
 
-        <a href="https://germ-eviction-web.vercel.app/#contact" target="_blank" rel="noopener" class="contact-row">
+        <a href="https://germeviction.com/#contact" target="_blank" rel="noopener" class="contact-row">
           <div class="icon-circle">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -525,7 +513,7 @@
           </div>
         </a>
 
-        <a href="https://germ-eviction-web.vercel.app/#home" target="_blank" rel="noopener" class="contact-row">
+        <a href="https://germeviction.com" target="_blank" rel="noopener" class="contact-row">
           <div class="icon-circle">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -571,7 +559,7 @@
       var track  = document.getElementById('sliderTrack');
       var dots   = document.querySelectorAll('#sliderDots .dot');
       var slides = track.querySelectorAll('.slide');
-      var total  = 4;
+      var total  = 3;
       var current = 0;
       var timer;
 
