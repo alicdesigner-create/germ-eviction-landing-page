@@ -3,10 +3,9 @@ function downloadVCF() {
   const vcard = [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'N:Garay;Debbie;;;',
-    'FN:Debbie Garay',
+    'FN:Germ Eviction',
     'ORG:Germ Eviction',
-    'TITLE:Disinfection Specialist',
+    'TITLE:Commercial Restroom Disinfection Specialists',
     'TEL;TYPE=WORK,VOICE:+17209102468',
     'TEL;TYPE=CELL:+17209102468',
     'EMAIL;TYPE=WORK:info@germeviction.com',
@@ -19,7 +18,7 @@ function downloadVCF() {
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'Debbie-GermEviction.vcf';
+  a.download = 'Germ-Eviction.vcf';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -38,8 +37,8 @@ function downloadVCF() {
 // ─── Share Card ──────────────────────────────────────────────
 function shareCard() {
   const shareData = {
-    title: 'Germ Eviction — Debbie',
-    text:  'Debbie | Disinfection Specialist\nGerm Eviction\n📞 (720) 910-2468\n✉️ info@germeviction.com',
+    title: 'Germ Eviction — Commercial Restroom Disinfection',
+    text:  'Commercial Restroom Disinfection Specialists\nDeep Cleaning & Sanitization\n📞 (720) 910-2468\n✉️ info@germeviction.com',
     url:   window.location.href
   };
 
